@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="script.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .weatherContainer {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        padding: 10px;
+        width: 200px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        background-color: #2980b9;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #1f5a80;
+      }
+
+      .result {
+        margin-top: 20px;
+        align-items: center;
+      }
+
+      .weatherDetails {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .weatherItem {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      .weatherItem:last-child {
+        border-bottom: none;
+      }
+      .weatherItem span {
+        font-weight: bold;
+      }
+      .loading {
+        margin-top: 20px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="weatherContainer">
+      <h1>Weather App</h1>
+      <input type="text" placeholder="Enter your location" id="locationInput" />
+      <button type="button" id="submitButton">Get Weather</button>
+      <div class="result" id="result">
+        <div class="weatherDetails" id="weatherDetails" style="display: none">
+          <div class="weatherItem">
+            <span>Location:</span>
+            <span id="locationName"></span>
+          </div>
+          <div class="weatherItem">
+            <span>Temperature:</span>
+            <span id="temperature"></span>
+          </div>
+          <div class="weatherItem">
+            <span>Humidity:</span>
+            <span id="humidity"></span>
+          </div>
+          <div class="weatherItem">
+            <span>Weather:</span>
+            <span id="weather"></span>
+          </div>
+          <div class="weatherItem">
+            <span>Coordinates:</span>
+            <span id="coordinates"></span>
+          </div>
+        </div>
+        <div class="loading" id="loading">Loading...</div>
+      </div>
+    </div>
+  </body>
+</html>
